@@ -35,3 +35,16 @@ int main()
     return 0;
 }
 /* end of factorial.c */
+
+/* OUTPUT
+
+5
+5! = 120
+
+12
+12! = 479001600
+
+13
+Factorial too large!
+
+*/
