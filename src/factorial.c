@@ -4,19 +4,34 @@
  */
 
 #include <stdio.h>
+#include <limits.h>
 
-unsigned fac(unsigned n)
+int fac(int n)
 {
-    unsigned ret;
-    for (ret = 1; n; --n) ret *= n;
-    return ret;
+    int pos, pre, ret;
+
+    pos = n >= 0;
+    if (!pos) n = -n;
+
+    for (pre = 0, ret = 1; n; --n, pre = ret) {
+        ret *= n;
+        if (pre > ret) return -INT_MAX;
+    }
+
+    return pos ? ret : -ret;
 }
 
 int main()
 {
-    int n;
+    int n, nfac;
+
     scanf(" %d%*c", &n);
-    printf("%d! = %c%d\n", n, n > 0 ? '\0' : '-', fac(n > 0 ? n : -n));
+
+    if ((nfac = fac(n)) != -INT_MAX)
+        printf("%d! = %d\n", n, nfac);
+    else
+        fprintf(stderr, "Factorial too large!\n");
+
     return 0;
 }
 /* end of factorial.c */
