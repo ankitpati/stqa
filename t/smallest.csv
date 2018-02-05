@@ -8,4 +8,4 @@ Display smallest number out of a set of input numbers.,1,6,43 54 5 -3 54 94,-3,A
 ,7,2,-5 -43,-43,As Expected,Pass
 ,8,4,-5 -43 5 43,-43,As Expected,Pass
 ,9,2,2147483647 -2147483648,-2147483648,As Expected,Pass
-,10,2,2147483647 -2147483649,-2147483649,2147483647,Fail
+,10,2,2147483647 -2147483649,Input beyond range,2147483647,Fail
