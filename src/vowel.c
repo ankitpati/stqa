@@ -31,7 +31,7 @@ int main()
 }
 /* end of vowel.c */
 
-/*
+/* OUTPUT
 
 q
 Consonant

@@ -24,7 +24,7 @@ int main()
 }
 /* end of smallest.c */
 
-/*
+/* OUTPUT
 
 43 54 5 -3 54 94
 12 43 2 -9 31 12
