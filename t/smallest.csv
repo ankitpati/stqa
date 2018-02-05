@@ -1,0 +1,11 @@
+Case Description,Sl. No.,Size of Array,Input,Expected Output,Actual Result,Status
+Display smallest number out of a set of input numbers.,1,6,43 54 5 -3 54 94,-3,As Expected,Pass
+,2,6,12 43 2 -9 31 12,-9,As Expected,Pass
+,3,1,5,5,As Expected,Pass
+,4,0,,No input given,As Expected,Pass
+,5,12,43 54 5 -3 54 94 12 43 2 -9 31 12,-9,As Expected,Pass
+,6,2,5 43,5,As Expected,Pass
+,7,2,-5 -43,-43,As Expected,Pass
+,8,4,-5 -43 5 43,-43,As Expected,Pass
+,9,2,2147483647 -2147483648,-2147483648,As Expected,Pass
+,10,2,2147483647 -2147483649,-2147483649,2147483647,Fail
