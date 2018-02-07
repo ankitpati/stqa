@@ -1,0 +1,11 @@
+Case Description,Sl. No.,Input,Expected Output,Actual Result,Status
+Classify input character as vowel or consonant.,1,q,Consonant,As Expected,Pass
+Classify input character as vowel or consonant.,2,w,Consonant,As Expected,Pass
+Classify input character as vowel or consonant.,3,e,Vowel,As Expected,Pass
+Classify input character as vowel or consonant.,4,A,Vowel,As Expected,Pass
+Classify input character as vowel or consonant.,5,4,Not a letter.,Consonant,Fail
+Classify input character as vowel or consonant.,6,5,Not a letter.,Consonant,Fail
+Classify input character as vowel or consonant.,7,%,Not a letter.,Consonant,Fail
+Classify input character as vowel or consonant.,8,$,Not a letter.,Consonant,Fail
+Classify input character as vowel or consonant.,9,I,Vowel,As Expected,Pass
+Classify input character as vowel or consonant.,10,Q,Consonant,As Expected,Pass
