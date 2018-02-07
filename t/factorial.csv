@@ -1,0 +1,11 @@
+Case Description,Sl. No.,Input,Expected Output,Actual Result,Status
+Calculate factorial of input number.,1,0,1,As Expected,Pass
+Calculate factorial of input number.,2,1,1,As Expected,Pass
+Calculate factorial of input number.,3,2,2,As Expected,Pass
+Calculate factorial of input number.,4,5,120,As Expected,Pass
+Calculate factorial of input number.,5,-5,-120,As Expected,Pass
+Calculate factorial of input number.,6,-1,-1,As Expected,Pass
+Calculate factorial of input number.,7,12,479001600,As Expected,Pass
+Calculate factorial of input number.,8,13,Factorial too large,As Expected,Pass
+Calculate factorial of input number.,9,20,Factorial too large,As Expected,Pass
+Calculate factorial of input number.,10,6,720,As Expected,Pass
