@@ -42,10 +42,10 @@ Consonant
 e
 Vowel
 
-a
+A
 Vowel
 
-43
+4
 Consonant
 
 */
