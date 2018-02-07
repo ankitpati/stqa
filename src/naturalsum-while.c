@@ -13,7 +13,7 @@ int main()
     scanf(" %d%*c", &n);
 
     sum += n;
-    while (--n) sum += n;
+    while (n--) sum += n;
 
     printf("Sum = %d\n", sum);
 
