@@ -13,7 +13,7 @@ int isleap(unsigned year)
 
 int isdate(unsigned d, unsigned m, unsigned y)
 {
-    if (d < 1 || y < 1900 || y > 2025) return 0; /* false == 0 */
+    if (d < 1 || !y) return 0; /* false == 0 */
 
     switch (m) {
     case 1: case 3: case 5: case 7: case 8: case 10: case 12:   /* 31 days */
