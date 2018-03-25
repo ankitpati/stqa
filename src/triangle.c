@@ -5,14 +5,19 @@
 
 #include <stdio.h>
 
+#define MIN   0
+#define MAX 100
+
 int main()
 {
     int x, y, z;
 
-    puts("3 sides of a triangle (integers)?");
+    puts("3 sides of a triangle (integers [0, 100])?");
     scanf(" %d %d %d%*c", &x, &y, &z);
 
-    if (!x || !y || !z || x + y <= z || z + x <= y || y + z <= x)
+    if (x < MIN || x > MAX || y < MIN || y > MAX || z < MIN || z > MAX)
+        puts("Input out of range.");
+    else if (!x || !y || !z || x + y <= z || z + x <= y || y + z <= x)
         puts("Not a Triangle.");
     else if (x == y && y == z)
         puts("Equilateral Triangle.");
