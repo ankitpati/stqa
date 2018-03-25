@@ -1,5 +1,9 @@
 #!/usr/bin/env perl
 
+# triangle.t
+# Date  : 25 March 2018
+# Author: Ankit Pati
+
 use strict;
 use warnings;
 
@@ -62,3 +66,29 @@ foreach my $tval (tests_as_arrayrefs robustness_tests %bvalues) {
 }
 
 close $csv;
+
+# end of triangle.t
+
+__END__
+OUTPUT
+
+1..19
+ok 1 - Nature of triangle identified.
+ok 2 - Nature of triangle identified.
+ok 3 - Nature of triangle identified.
+ok 4 - Nature of triangle identified.
+ok 5 - Nature of triangle identified.
+ok 6 - Nature of triangle identified.
+ok 7 - Nature of triangle identified.
+ok 8 - Nature of triangle identified.
+ok 9 - Nature of triangle identified.
+ok 10 - Nature of triangle identified.
+ok 11 - Nature of triangle identified.
+ok 12 - Nature of triangle identified.
+ok 13 - Nature of triangle identified.
+ok 14 - Nature of triangle identified.
+ok 15 - Nature of triangle identified.
+ok 16 - Nature of triangle identified.
+ok 17 - Nature of triangle identified.
+ok 18 - Nature of triangle identified.
+ok 19 - Nature of triangle identified.

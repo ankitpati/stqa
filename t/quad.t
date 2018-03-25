@@ -1,5 +1,9 @@
 #!/usr/bin/env perl
 
+# quad.t
+# Date  : 25 March 2018
+# Author: Ankit Pati
+
 use strict;
 use warnings;
 
@@ -58,3 +62,23 @@ foreach my $tval (tests_as_arrayrefs boundary_value_tests %bvalues) {
 }
 
 close $csv;
+
+# end of quad.t
+
+__END__
+OUTPUT
+
+1..13
+ok 1 - Nature of roots identified.
+ok 2 - Nature of roots identified.
+ok 3 - Nature of roots identified.
+ok 4 - Nature of roots identified.
+ok 5 - Nature of roots identified.
+ok 6 - Nature of roots identified.
+ok 7 - Nature of roots identified.
+ok 8 - Nature of roots identified.
+ok 9 - Nature of roots identified.
+ok 10 - Nature of roots identified.
+ok 11 - Nature of roots identified.
+ok 12 - Nature of roots identified.
+ok 13 - Nature of roots identified.
