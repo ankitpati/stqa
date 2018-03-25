@@ -1,0 +1,126 @@
+a,b,c,Expected Output,Actual Output,Status
+0,0,0,Not a Triangle.,Not a Triangle.,Pass
+0,0,1,Not a Triangle.,Not a Triangle.,Pass
+0,0,50,Not a Triangle.,Not a Triangle.,Pass
+0,0,99,Not a Triangle.,Not a Triangle.,Pass
+0,0,100,Not a Triangle.,Not a Triangle.,Pass
+0,1,0,Not a Triangle.,Not a Triangle.,Pass
+0,1,1,Not a Triangle.,Not a Triangle.,Pass
+0,1,50,Not a Triangle.,Not a Triangle.,Pass
+0,1,99,Not a Triangle.,Not a Triangle.,Pass
+0,1,100,Not a Triangle.,Not a Triangle.,Pass
+0,50,0,Not a Triangle.,Not a Triangle.,Pass
+0,50,1,Not a Triangle.,Not a Triangle.,Pass
+0,50,50,Not a Triangle.,Not a Triangle.,Pass
+0,50,99,Not a Triangle.,Not a Triangle.,Pass
+0,50,100,Not a Triangle.,Not a Triangle.,Pass
+0,99,0,Not a Triangle.,Not a Triangle.,Pass
+0,99,1,Not a Triangle.,Not a Triangle.,Pass
+0,99,50,Not a Triangle.,Not a Triangle.,Pass
+0,99,99,Not a Triangle.,Not a Triangle.,Pass
+0,99,100,Not a Triangle.,Not a Triangle.,Pass
+0,100,0,Not a Triangle.,Not a Triangle.,Pass
+0,100,1,Not a Triangle.,Not a Triangle.,Pass
+0,100,50,Not a Triangle.,Not a Triangle.,Pass
+0,100,99,Not a Triangle.,Not a Triangle.,Pass
+0,100,100,Not a Triangle.,Not a Triangle.,Pass
+1,0,0,Not a Triangle.,Not a Triangle.,Pass
+1,0,1,Not a Triangle.,Not a Triangle.,Pass
+1,0,50,Not a Triangle.,Not a Triangle.,Pass
+1,0,99,Not a Triangle.,Not a Triangle.,Pass
+1,0,100,Not a Triangle.,Not a Triangle.,Pass
+1,1,0,Not a Triangle.,Not a Triangle.,Pass
+1,1,1,Equilateral Triangle.,Equilateral Triangle.,Pass
+1,1,50,Not a Triangle.,Not a Triangle.,Pass
+1,1,99,Not a Triangle.,Not a Triangle.,Pass
+1,1,100,Not a Triangle.,Not a Triangle.,Pass
+1,50,0,Not a Triangle.,Not a Triangle.,Pass
+1,50,1,Not a Triangle.,Not a Triangle.,Pass
+1,50,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+1,50,99,Not a Triangle.,Not a Triangle.,Pass
+1,50,100,Not a Triangle.,Not a Triangle.,Pass
+1,99,0,Not a Triangle.,Not a Triangle.,Pass
+1,99,1,Not a Triangle.,Not a Triangle.,Pass
+1,99,50,Not a Triangle.,Not a Triangle.,Pass
+1,99,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+1,99,100,Not a Triangle.,Not a Triangle.,Pass
+1,100,0,Not a Triangle.,Not a Triangle.,Pass
+1,100,1,Not a Triangle.,Not a Triangle.,Pass
+1,100,50,Not a Triangle.,Not a Triangle.,Pass
+1,100,99,Not a Triangle.,Not a Triangle.,Pass
+1,100,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,0,0,Not a Triangle.,Not a Triangle.,Pass
+50,0,1,Not a Triangle.,Not a Triangle.,Pass
+50,0,50,Not a Triangle.,Not a Triangle.,Pass
+50,0,99,Not a Triangle.,Not a Triangle.,Pass
+50,0,100,Not a Triangle.,Not a Triangle.,Pass
+50,1,0,Not a Triangle.,Not a Triangle.,Pass
+50,1,1,Not a Triangle.,Not a Triangle.,Pass
+50,1,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,1,99,Not a Triangle.,Not a Triangle.,Pass
+50,1,100,Not a Triangle.,Not a Triangle.,Pass
+50,50,0,Not a Triangle.,Not a Triangle.,Pass
+50,50,1,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,50,50,Equilateral Triangle.,Equilateral Triangle.,Pass
+50,50,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,50,100,Not a Triangle.,Not a Triangle.,Pass
+50,99,0,Not a Triangle.,Not a Triangle.,Pass
+50,99,1,Not a Triangle.,Not a Triangle.,Pass
+50,99,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,99,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,99,100,Scalene Triangle.,Scalene Triangle.,Pass
+50,100,0,Not a Triangle.,Not a Triangle.,Pass
+50,100,1,Not a Triangle.,Not a Triangle.,Pass
+50,100,50,Not a Triangle.,Not a Triangle.,Pass
+50,100,99,Scalene Triangle.,Scalene Triangle.,Pass
+50,100,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,0,0,Not a Triangle.,Not a Triangle.,Pass
+99,0,1,Not a Triangle.,Not a Triangle.,Pass
+99,0,50,Not a Triangle.,Not a Triangle.,Pass
+99,0,99,Not a Triangle.,Not a Triangle.,Pass
+99,0,100,Not a Triangle.,Not a Triangle.,Pass
+99,1,0,Not a Triangle.,Not a Triangle.,Pass
+99,1,1,Not a Triangle.,Not a Triangle.,Pass
+99,1,50,Not a Triangle.,Not a Triangle.,Pass
+99,1,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,1,100,Not a Triangle.,Not a Triangle.,Pass
+99,50,0,Not a Triangle.,Not a Triangle.,Pass
+99,50,1,Not a Triangle.,Not a Triangle.,Pass
+99,50,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,50,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,50,100,Scalene Triangle.,Scalene Triangle.,Pass
+99,99,0,Not a Triangle.,Not a Triangle.,Pass
+99,99,1,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,99,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,99,99,Equilateral Triangle.,Equilateral Triangle.,Pass
+99,99,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,100,0,Not a Triangle.,Not a Triangle.,Pass
+99,100,1,Not a Triangle.,Not a Triangle.,Pass
+99,100,50,Scalene Triangle.,Scalene Triangle.,Pass
+99,100,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,100,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,0,0,Not a Triangle.,Not a Triangle.,Pass
+100,0,1,Not a Triangle.,Not a Triangle.,Pass
+100,0,50,Not a Triangle.,Not a Triangle.,Pass
+100,0,99,Not a Triangle.,Not a Triangle.,Pass
+100,0,100,Not a Triangle.,Not a Triangle.,Pass
+100,1,0,Not a Triangle.,Not a Triangle.,Pass
+100,1,1,Not a Triangle.,Not a Triangle.,Pass
+100,1,50,Not a Triangle.,Not a Triangle.,Pass
+100,1,99,Not a Triangle.,Not a Triangle.,Pass
+100,1,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,50,0,Not a Triangle.,Not a Triangle.,Pass
+100,50,1,Not a Triangle.,Not a Triangle.,Pass
+100,50,50,Not a Triangle.,Not a Triangle.,Pass
+100,50,99,Scalene Triangle.,Scalene Triangle.,Pass
+100,50,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,99,0,Not a Triangle.,Not a Triangle.,Pass
+100,99,1,Not a Triangle.,Not a Triangle.,Pass
+100,99,50,Scalene Triangle.,Scalene Triangle.,Pass
+100,99,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,99,100,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,100,0,Not a Triangle.,Not a Triangle.,Pass
+100,100,1,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,100,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,100,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,100,100,Equilateral Triangle.,Equilateral Triangle.,Pass
