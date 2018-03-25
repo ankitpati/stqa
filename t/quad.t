@@ -17,6 +17,10 @@ my $executable;
 
 system qw(cc -o), $executable, $source and die "Could not compile $source!\n";
 
+my $csvfile = 'quad.csv';
+open my $csv, '>', $csvfile or die "Could not open $csvfile!\n";
+print $csv "a,b,c,Expected Output,Actual Output,Status\n";
+
 my %bvalues = (
     a => [0, 100],
     b => [0, 100],
@@ -43,4 +47,8 @@ foreach my $tval (boundary_value_tests_as_arrayrefs %bvalues) {
     my $status =
         is ($got, $expected, 'Nature of roots identified.')
             ? 'Pass' : 'Fail';
+
+    print $csv "$a,$b,$c,$got,$expected,$status\n";
 }
+
+close $csv;
