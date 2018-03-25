@@ -1,0 +1,20 @@
+a,b,c,Expected Output,Actual Output,Status
+-1,50,50,Not a Triangle.,Not a Triangle.,Pass
+0,50,50,Not a Triangle.,Not a Triangle.,Pass
+1,50,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+99,50,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+100,50,50,Not a Triangle.,Not a Triangle.,Pass
+101,50,50,Not a Triangle.,Not a Triangle.,Pass
+50,-1,50,Not a Triangle.,Not a Triangle.,Pass
+50,0,50,Not a Triangle.,Not a Triangle.,Pass
+50,1,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,99,50,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,100,50,Not a Triangle.,Not a Triangle.,Pass
+50,101,50,Not a Triangle.,Not a Triangle.,Pass
+50,50,-1,Not a Triangle.,Not a Triangle.,Pass
+50,50,0,Not a Triangle.,Not a Triangle.,Pass
+50,50,1,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,50,99,Isosceles Triangle.,Isosceles Triangle.,Pass
+50,50,100,Not a Triangle.,Not a Triangle.,Pass
+50,50,101,Not a Triangle.,Not a Triangle.,Pass
+50,50,50,Equilateral Triangle.,Equilateral Triangle.,Pass
