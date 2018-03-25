@@ -8,11 +8,39 @@ use warnings;
 use Exporter 'import';
 
 our @EXPORT_OK = qw(
-    boundary_value_tests    boundary_value_tests_as_arrayrefs
-    robustness_tests        robustness_tests_as_arrayrefs
-    worst_case_tests        worst_case_tests_as_arrayrefs
-    nightmare_tests         nightmare_tests_as_arrayrefs
+    boundary_value_tests
+    robustness_tests
+    worst_case_tests
+    nightmare_tests
+
+    tests_as_arrayrefs
 );
+
+# Helper Subroutines
+sub tests_as_arrayrefs {
+    my @tvalues;
+
+    foreach my $tval (@_) {
+        my @tcase;
+        push @tcase, $tval->{$_} foreach sort keys %$tval;
+        push @tvalues, \@tcase;
+    }
+
+    return @tvalues;
+}
+
+sub next_permutation {
+    my $limit = shift; # value at which next field increments
+
+    for (my $i = 0; $i < @_; ++$i) {
+        ++$_[$i];
+        last if $_[$i] < $limit;
+        $_[$i] = 0;
+    }
+
+    return @_;
+}
+# end of Helper Subroutines
 
 sub boundary_value_tests {
     my %bvalues = @_;
@@ -45,18 +73,6 @@ sub boundary_value_tests {
 
     # add NOMINAL values for all variables to make up for the exclusions
     push @tvalues, { map { $_ => $bvalues{$_}[$c{nominal}] } keys %bvalues };
-
-    return @tvalues;
-}
-
-sub boundary_value_tests_as_arrayrefs {
-    my @tvalues;
-
-    foreach my $tval (boundary_value_tests @_) {
-        my @tcase;
-        push @tcase, $tval->{$_} foreach sort keys %$tval;
-        push @tvalues, \@tcase;
-    }
 
     return @tvalues;
 }
@@ -100,30 +116,6 @@ sub robustness_tests {
     return @tvalues;
 }
 
-sub robustness_tests_as_arrayrefs {
-    my @tvalues;
-
-    foreach my $tval (robustness_tests @_) {
-        my @tcase;
-        push @tcase, $tval->{$_} foreach sort keys %$tval;
-        push @tvalues, \@tcase;
-    }
-
-    return @tvalues;
-}
-
-sub next_permutation {
-    my $limit = shift; # value at which next field increments
-
-    for (my $i = 0; $i < @_; ++$i) {
-        ++$_[$i];
-        last if $_[$i] < $limit;
-        $_[$i] = 0;
-    }
-
-    return @_;
-}
-
 sub worst_case_tests {
     my %bvalues = @_;
     my @tvalues;
@@ -153,18 +145,6 @@ sub worst_case_tests {
 
         next_permutation scalar keys %c, @bvli;
         last unless grep /^[^0]$/, @bvli;
-    }
-
-    return @tvalues;
-}
-
-sub worst_case_tests_as_arrayrefs {
-    my @tvalues;
-
-    foreach my $tval (worst_case_tests @_) {
-        my @tcase;
-        push @tcase, $tval->{$_} foreach sort keys %$tval;
-        push @tvalues, \@tcase;
     }
 
     return @tvalues;
@@ -203,18 +183,6 @@ sub nightmare_tests {
 
         next_permutation scalar keys %c, @bvli;
         last unless grep /^[^0]$/, @bvli;
-    }
-
-    return @tvalues;
-}
-
-sub nightmare_tests_as_arrayrefs {
-    my @tvalues;
-
-    foreach my $tval (nightmare_tests @_) {
-        my @tcase;
-        push @tcase, $tval->{$_} foreach sort keys %$tval;
-        push @tvalues, \@tcase;
     }
 
     return @tvalues;
