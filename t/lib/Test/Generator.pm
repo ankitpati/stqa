@@ -11,6 +11,7 @@ our @EXPORT_OK = qw(
     boundary_value_tests    boundary_value_tests_as_arrayrefs
     robustness_tests        robustness_tests_as_arrayrefs
     worst_case_tests        worst_case_tests_as_arrayrefs
+    nightmare_tests         nightmare_tests_as_arrayrefs
 );
 
 sub boundary_value_tests {
@@ -161,6 +162,56 @@ sub worst_case_tests_as_arrayrefs {
     my @tvalues;
 
     foreach my $tval (worst_case_tests @_) {
+        my @tcase;
+        push @tcase, $tval->{$_} foreach sort keys %$tval;
+        push @tvalues, \@tcase;
+    }
+
+    return @tvalues;
+}
+
+sub nightmare_tests {
+    my %bvalues = @_;
+    my @tvalues;
+
+    my %c = (
+        minmone => 0,
+        minimum => 1,
+        minpone => 2,
+        nominal => 3,
+        maxmone => 4,
+        maximum => 5,
+        maxpone => 6,
+    );  # constant values for indexing arrays
+
+    while (my ($key, $val) = each %bvalues) {
+        my ($min, $max) = @$val;
+        $bvalues{$key} = [
+            $min-1, $min, $min+1, int (($min + $max) / 2), $max-1, $max, $max+1
+        ];
+    }
+
+    my @vars = sort { $b cmp $a } keys %bvalues;
+    my @bvli = (0) x @vars; # each one indexes into a single bvalues arrayref
+
+    for (;;) {
+        my %tcase = ();
+        my $i = 0;
+        $tcase{$_} = $bvalues{$_}[$bvli[$i++]] foreach @vars;
+
+        push @tvalues, \%tcase;
+
+        next_permutation scalar keys %c, @bvli;
+        last unless grep /^[^0]$/, @bvli;
+    }
+
+    return @tvalues;
+}
+
+sub nightmare_tests_as_arrayrefs {
+    my @tvalues;
+
+    foreach my $tval (nightmare_tests @_) {
         my @tcase;
         push @tcase, $tval->{$_} foreach sort keys %$tval;
         push @tvalues, \@tcase;
