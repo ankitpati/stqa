@@ -21,26 +21,31 @@ my %bvalues = (
     c => [0, 100],
 );
 
-my @tvalues;
+sub boundary_value_tests {
+    my %bvalues = @_;
+    my @tvalues;
 
-while (my ($key, $val) = each %bvalues) {
-    my ($min, $max) = @$val;
-    $bvalues{$key} = [$min, $min + 1, int (($min + $max) / 2), $max - 1, $max];
-}
+    while (my ($key, $val) = each %bvalues) {
+        my ($min, $max) = @$val;
+        $bvalues{$key} = [$min, $min+1, int (($min + $max) / 2), $max-1, $max];
+    }
 
-foreach my $bkey (sort keys %bvalues) {
-    # other keys, apart from the one under consideration, take NOMINAL values
-    my %oth = map { $_ => $bvalues{$_}[NOMINAL] }
+    foreach my $bkey (sort keys %bvalues) {
+        # other keys, apart from $bkey, take NOMINAL values
+        my %oth = map { $_ => $bvalues{$_}[NOMINAL] }
                                                 grep !/^$bkey$/, keys %bvalues;
 
-    push @tvalues, { $bkey => $_, %oth }
-        foreach @{$bvalues{$bkey}}[MINIMUM, MINPONE, MAXMONE, MAXIMUM];
-            # exclude NOMINAL value to avoid duplicates
+        push @tvalues, { $bkey => $_, %oth }
+            foreach @{$bvalues{$bkey}}[MINIMUM, MINPONE, MAXMONE, MAXIMUM];
+                # exclude NOMINAL value to avoid duplicates
+    }
+
+    push @tvalues, { map { $_ => $bvalues{$_}[NOMINAL] } keys %bvalues };
+
+    return @tvalues;
 }
 
-push @tvalues, { map { $_ => $bvalues{$_}[NOMINAL] } keys %bvalues };
-
-foreach my $tval (@tvalues) {
+foreach my $tval (boundary_value_tests %bvalues) {
     print "$_ => $tval->{$_} " foreach sort keys %$tval;
     print "\n";
 }
