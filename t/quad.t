@@ -17,7 +17,8 @@ my $executable;
 
 system qw(cc -o), $executable, $source and die "Could not compile $source!\n";
 
-my $csvfile = 'quad.csv';
+my $csvfile;
+($csvfile = $0) =~ s/.t$/.csv/;
 open my $csv, '>', $csvfile or die "Could not open $csvfile!\n";
 print $csv "a,b,c,Expected Output,Actual Output,Status\n";
 
