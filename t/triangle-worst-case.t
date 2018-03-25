@@ -9,7 +9,7 @@ use Test::More;
 
 use File::Basename 'dirname';
 use lib dirname ($0) . '/lib';
-use Test::Generator 'worst_case_tests_as_arrayrefs';
+use Test::Generator qw(worst_case_tests tests_as_arrayrefs);
 
 my $source = dirname ($0) . '/../src/triangle.c';
 my $executable;
@@ -36,7 +36,7 @@ my %bvalues = (
 # total number of tests must be 5**n
 plan tests => 5 ** scalar keys %bvalues;
 
-foreach my $tval (worst_case_tests_as_arrayrefs %bvalues) {
+foreach my $tval (tests_as_arrayrefs worst_case_tests %bvalues) {
     my ($x, $y, $z) = @$tval;
     my $expected =
         $x < MIN || $x > MAX || $y < MIN || $y > MAX || $z < MIN || $z > MAX ?

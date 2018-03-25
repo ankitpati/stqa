@@ -9,7 +9,7 @@ use Test::More;
 
 use File::Basename 'dirname';
 use lib dirname ($0) . '/lib';
-use Test::Generator 'nightmare_tests_as_arrayrefs';
+use Test::Generator qw(nightmare_tests tests_as_arrayrefs);
 
 my $source = dirname ($0) . '/../src/triangle.c';
 my $executable;
@@ -36,7 +36,7 @@ my %bvalues = (
 # total number of tests must be 7**n
 plan tests => 7 ** scalar keys %bvalues;
 
-foreach my $tval (nightmare_tests_as_arrayrefs %bvalues) {
+foreach my $tval (tests_as_arrayrefs nightmare_tests %bvalues) {
     my ($x, $y, $z) = @$tval;
     my $expected =
         $x < MIN || $x > MAX || $y < MIN || $y > MAX || $z < MIN || $z > MAX ?
