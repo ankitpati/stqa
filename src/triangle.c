@@ -7,10 +7,10 @@
 
 int main()
 {
-    unsigned x, y, z;
+    int x, y, z;
 
-    printf("Enter 3 sides of a triangle (positive integers): ");
-    scanf(" %u %u %u%*c", &x, &y, &z);
+    puts("3 sides of a triangle (integers)?");
+    scanf(" %d %d %d%*c", &x, &y, &z);
 
     if (!x || !y || !z || x + y <= z || z + x <= y || y + z <= x)
         puts("Not a Triangle.");
@@ -27,16 +27,20 @@ int main()
 
 /* OUTPUT
 
-Enter 3 sides of a triangle (positive integers): 43 50 5
+3 sides of a triangle (integers)?
+43 50 5
 Not a Triangle.
 
-Enter 3 sides of a triangle (positive integers): 43 43 43
+3 sides of a triangle (integers)?
+43 43 43
 Equilateral Triangle.
 
-Enter 3 sides of a triangle (positive integers): 43 50 43
+3 sides of a triangle (integers)?
+43 50 43
 Isosceles Triangle.
 
-Enter 3 sides of a triangle (positive integers): 43 50 45
+3 sides of a triangle (integers)?
+43 50 45
 Scalene Triangle.
 
 */
