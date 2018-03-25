@@ -1,0 +1,14 @@
+a,b,c,Expected Output,Actual Output,Status
+0,50,50,Not a Quadratic Equation.,Not a Quadratic Equation.,Pass
+1,50,50,Real Roots.,Real Roots.,Pass
+99,50,50,Imaginary Roots.,Imaginary Roots.,Pass
+100,50,50,Imaginary Roots.,Imaginary Roots.,Pass
+50,0,50,Imaginary Roots.,Imaginary Roots.,Pass
+50,1,50,Imaginary Roots.,Imaginary Roots.,Pass
+50,99,50,Imaginary Roots.,Imaginary Roots.,Pass
+50,100,50,Equal Roots.,Equal Roots.,Pass
+50,50,0,Real Roots.,Real Roots.,Pass
+50,50,1,Real Roots.,Real Roots.,Pass
+50,50,99,Imaginary Roots.,Imaginary Roots.,Pass
+50,50,100,Imaginary Roots.,Imaginary Roots.,Pass
+50,50,50,Imaginary Roots.,Imaginary Roots.,Pass
