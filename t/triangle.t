@@ -22,10 +22,15 @@ my $csvfile;
 open my $csv, '>', $csvfile or die "Could not open $csvfile!\n";
 print $csv "a,b,c,Expected Output,Actual Output,Status\n";
 
+use constant {
+    MIN =>   0,
+    MAX => 100,
+};
+
 my %bvalues = (
-    x => [0, 100],
-    y => [0, 100],
-    z => [0, 100],
+    x => [MIN, MAX],
+    y => [MIN, MAX],
+    z => [MIN, MAX],
 );
 
 # total number of tests must be 6*n + 1
@@ -34,12 +39,15 @@ plan tests => (6 * scalar keys %bvalues) + 1;
 foreach my $tval (robustness_tests_as_arrayrefs %bvalues) {
     my ($x, $y, $z) = @$tval;
     my $expected =
-        !$x || !$y || !$z || $x + $y <= $z || $z + $x <= $y || $y + $z <= $x ?
-            'Not a' :
-                $x == $y && $y == $z ? 'Equilateral' :
-                    $x == $y || $y == $z || $z == $x ? 'Isosceles' :
-                        'Scalene';
-    $expected .= ' Triangle.';
+        $x < MIN || $x > MAX || $y < MIN || $y > MAX || $z < MIN || $z > MAX ?
+            'Input out of range.' :
+                !$x || !$y || !$z || $x + $y <= $z ||
+                $z + $x <= $y || $y + $z <= $x ?
+                    'Not a Triangle.' :
+                        $x == $y && $y == $z ? 'Equilateral Triangle.' :
+                            $x == $y || $y == $z || $z == $x ?
+                                                        'Isosceles Triangle.' :
+                                'Scalene Triangle.';
 
     run [$executable], \"$x\n$y\n$z\n", '>', \my $log;
 
