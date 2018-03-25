@@ -7,7 +7,7 @@ use warnings;
 
 use Exporter 'import';
 
-our @EXPORT_OK = qw(boundary_value_tests);
+our @EXPORT_OK = qw(boundary_value_tests boundary_value_tests_as_arrayrefs);
 
 use constant {
     MINIMUM => 0,
@@ -38,6 +38,18 @@ sub boundary_value_tests {
 
     # add NOMINAL values for all variables to make up for the exclusions
     push @tvalues, { map { $_ => $bvalues{$_}[NOMINAL] } keys %bvalues };
+
+    return @tvalues;
+}
+
+sub boundary_value_tests_as_arrayrefs {
+    my @tvalues;
+
+    foreach my $tval (boundary_value_tests @_) {
+        my @tcase;
+        push @tcase, $tval->{$_} foreach sort keys %$tval;
+        push @tvalues, \@tcase;
+    }
 
     return @tvalues;
 }
