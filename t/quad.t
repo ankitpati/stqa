@@ -22,10 +22,15 @@ my $csvfile;
 open my $csv, '>', $csvfile or die "Could not open $csvfile!\n";
 print $csv "a,b,c,Expected Output,Actual Output,Status\n";
 
+use constant {
+    MIN =>   0,
+    MAX => 100,
+};
+
 my %bvalues = (
-    a => [0, 100],
-    b => [0, 100],
-    c => [0, 100],
+    a => [MIN, MAX],
+    b => [MIN, MAX],
+    c => [MIN, MAX],
 );
 
 # total number of tests must be 4*n + 1
