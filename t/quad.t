@@ -40,6 +40,7 @@ sub boundary_value_tests {
                 # exclude NOMINAL value to avoid duplicates
     }
 
+    # add NOMINAL values for all variables to make up for the exclusions
     push @tvalues, { map { $_ => $bvalues{$_}[NOMINAL] } keys %bvalues };
 
     return @tvalues;
