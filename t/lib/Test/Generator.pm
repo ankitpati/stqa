@@ -5,7 +5,7 @@ package Test::Generator;
 use strict;
 use warnings;
 
-use Exporter 'import';
+use base 'Exporter';
 
 our @EXPORT_OK = qw(
     boundary_value_tests
