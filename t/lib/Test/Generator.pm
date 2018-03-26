@@ -32,7 +32,7 @@ sub tests_as_arrayrefs {
 sub next_permutation {
     my $limit = shift; # value at which next field increments
 
-    for (my $i = 0; $i < @_; ++$i) {
+    foreach my $i (0 .. @_) {
         ++$_[$i];
         last if $_[$i] < $limit;
         $_[$i] = 0;
