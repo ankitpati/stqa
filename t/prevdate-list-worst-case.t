@@ -26,16 +26,13 @@ my %bvalues = (
 
 my @tests = worst_case_tests %bvalues;
 
-for (my $tests_displayed = 0; $tests_displayed != @tests; print "\n") {
-    for (
-        my $tests_on_this_line = 0;
-        $tests_displayed < @tests && $tests_on_this_line < TESTS_PER_LINE;
-        ++$tests_displayed, ++$tests_on_this_line
-    ) {
-        my $test = $tests[$tests_displayed];
-        printf "%04d-%02d-%02d ", $test->{y}, $test->{m}, $test->{d};
-    }
+my $i;
+for ($i = 0; $i < @tests; ++$i) {
+    my $test = $tests[$i];
+    printf "%04d-%02d-%02d ", $test->{y}, $test->{m}, $test->{d};
+    print "\n" unless ($i+1) % TESTS_PER_LINE;
 }
+print "\n" if $i % TESTS_PER_LINE;
 
 print "\n";
 
