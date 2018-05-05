@@ -16,7 +16,7 @@ use constant {
     TEST_WIDTH   => 11,
 };
 
-my $TESTS_PER_LINE = int SCREEN_WIDTH / int TEST_WIDTH;
+use constant TESTS_PER_LINE => int SCREEN_WIDTH / int TEST_WIDTH;
 
 my %bvalues = (
     d => [   1,   31],
@@ -29,7 +29,7 @@ my @tests = worst_case_tests %bvalues;
 for (my $tests_displayed = 0; $tests_displayed != @tests; print "\n") {
     for (
         my $tests_on_this_line = 0;
-        $tests_displayed < @tests && $tests_on_this_line < $TESTS_PER_LINE;
+        $tests_displayed < @tests && $tests_on_this_line < TESTS_PER_LINE;
         ++$tests_displayed, ++$tests_on_this_line
     ) {
         my $test = $tests[$tests_displayed];
